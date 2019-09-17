@@ -50,12 +50,18 @@ public class BoardMapperTests {
 //	}
 	
 	
+//	@Test
+//	public void testRead() {
+//		
+//		//존재하는 게시물 번호로 테스트
+//		BoardVO board = mapper.read(4L);
+//		log.info(board);
+//	}
 	@Test
-	public void testRead() {
+	public void testDelete() {
+		// 존재하는 게시물 번호로 테스트
 		
-		//존재하는 게시물 번호로 테스트
-		BoardVO board = mapper.read(4L);
-		log.info(board);
+		log.info("DELETE COUNT: "+ mapper.delete(20L));
 	}
 	
 }
