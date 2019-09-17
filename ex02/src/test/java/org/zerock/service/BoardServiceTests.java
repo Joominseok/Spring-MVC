@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zerock.domain.BoardVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -21,10 +22,53 @@ public class BoardServiceTests {
 	private BoardService service;
 	
 	//BoardService 주입이 잘 되었는지 테스트.
-	@Test
-	public void testExist() {
-		log.info(service);
-		assertNotNull(service);
-	}
+//	@Test
+//	public void testExist() {
+//		log.info(service);
+//		assertNotNull(service);
+//	}
 	
+//	@Test
+//	public void testRegister() {
+//		BoardVO board = new BoardVO();
+//		board.setTitle("새로 작성하는 글");
+//		board.setContent("새로 작성하는 내용");
+//		board.setWriter("newbie");
+//		
+//		service.register(board);
+//		
+//		log.info("생성된 게시물의 번호: "+ board.getBno());
+//	}
+	
+//	@Test
+//	public void testGetList() {
+//		//리스트 작업 구현
+//		service.getList().forEach(board -> log.info(board));
+//	}
+	
+//	@Test
+//	public void testGet() {
+//		// 특정 번호글 조회
+//		log.info(service.get(8L));
+//	}
+	
+//	@Test
+//	public void testUpdate() {
+//		// 수정 작업 구현
+//		BoardVO board = service.get(66L);
+//		
+//		if(board == null) {
+//			return;
+//		}
+//		
+//		board.setTitle("제목을 수정합니다.");
+//		log.info("MODIFY RESULT: " + service.modify(board));
+//		
+//	}
+	
+	@Test
+	public void testDelete() {
+		//게시물 번호의 존재 여부를 확인하고 테스트할 것.
+		log.info("REMOVE RESULT: " + service.remove(6L));
+	}
 }
