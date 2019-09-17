@@ -57,11 +57,27 @@ public class BoardMapperTests {
 //		BoardVO board = mapper.read(4L);
 //		log.info(board);
 //	}
+	
+//	@Test
+//	public void testDelete() {
+//		// 존재하는 게시물 번호로 테스트
+//		
+//		log.info("DELETE COUNT: "+ mapper.delete(4L));
+//	}
+	
 	@Test
-	public void testDelete() {
-		// 존재하는 게시물 번호로 테스트
+	public void testupdate() {
 		
-		log.info("DELETE COUNT: "+ mapper.delete(20L));
+		BoardVO board = new BoardVO();
+		// 실행전 존재하는 번호인지 확인할 것.
+		board.setBno(3L);
+		board.setTitle("수정된 제목");
+		board.setContent("수정된 내용");
+		board.setWriter("user00");
+		
+		int count = mapper.update(board);
+		log.info("update count : "+ count);
+		
 	}
 	
 }
