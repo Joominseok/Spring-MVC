@@ -47,16 +47,27 @@ public class BoardControllerTests {
 //		
 //	}
 	
-	@Test
-	public void testRegister() throws Exception{
+//	@Test
+//	public void testRegister() throws Exception{
+//	
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
+//				.param("title", "테스트 새글 제목")
+//				.param("content", "테스트 새글 내용")
+//				.param("writer", "post유저")).andReturn().getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//	}
 	
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
-				.param("title", "테스트 새글 제목")
-				.param("content", "테스트 새글 내용")
-				.param("writer", "post유저")).andReturn().getModelAndView().getViewName();
+	@Test
+	public void testGet() throws Exception {
 		
-		log.info(resultPage);
+		log.info(mockMvc.perform(MockMvcRequestBuilders
+				.get("/board/get")
+				.param("bno", "2"))
+				.andReturn().getModelAndView().getViewName());
 	}
+
+	
 	
 }
 
