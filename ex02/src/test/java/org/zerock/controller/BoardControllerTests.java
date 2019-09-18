@@ -34,17 +34,33 @@ public class BoardControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
+//	@Test
+//	public void testList() throws Exception {
+//		//GET 방식
+//		log.info(
+//				//MockMvc는 말그대로 '가짜Mvc'라고 생각하면 된다.
+//				//(URL과 파라미터등을 브라우저에서 사용하는 것처럼 만들어서 controller를 실행 해볼 수 있다.)
+//			mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
+//			.andReturn()
+//			.getModelAndView()
+//			.getModelMap());
+//		
+//	}
+	
 	@Test
-	public void testList() throws Exception {
+	public void testRegister() throws Exception{
+	
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
+				.param("title", "테스트 새글 제목")
+				.param("content", "테스트 새글 내용")
+				.param("writer", "post유저")).andReturn().getModelAndView().getViewName();
 		
-		log.info(
-				//MockMvc는 말그대로 '가짜Mvc'라고 생각하면 된다.
-				//(URL과 파라미터등을 브라우저에서 사용하는 것처럼 만들어서 controller를 실행 해볼 수 있다.)
-			mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
-			.andReturn()
-			.getModelAndView()
-			.getModelMap());
-		
+		log.info(resultPage);
 	}
 	
 }
+
+
+
+
+
