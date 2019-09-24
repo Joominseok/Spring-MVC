@@ -68,4 +68,8 @@ public class BoardController {
 		return "redirecr:/board/list";
 	}
 	
+	@GetMapping("/register")
+	public void register() {
+		
+	}
 }
