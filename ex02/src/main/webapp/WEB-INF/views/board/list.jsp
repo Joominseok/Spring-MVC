@@ -35,7 +35,8 @@
                                 <c:forEach items="${list}" var="board">
                                 <tr>
                                 	<td><c:out value="${board.bno}" /> </td>
-                                	<td><c:out value="${board.title}" /></td>
+                                	<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'>
+                                	<c:out value="${board.title}"/></a></td>
                                 	<td><c:out value="${board.writer}" /></td>
                                 	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}"/></td>
                                 	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}"/></td>
@@ -79,9 +80,12 @@ $(document).ready(function(){
 	
 	checkModal(result);
 	
+	//히스토리 체크 부분 추가 만약, 모든처리가 끝난 후에는 모당찰을 보여줄 필요가 없는 상태가된다.
+	history.replaceState({},null,null);
+	
 	function checkModal(result) {
 		
-		if(result === '') {
+		if(result === '' || history.state ) {
 			return;
 		}
 		
