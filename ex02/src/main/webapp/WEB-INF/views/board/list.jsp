@@ -17,7 +17,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading"> Board list Page </div>
+                        <div class="panel-heading"> Board list Page 
+                        <button id="regBtn" type="button" class="btn btn-xs pull-right">Register New Board</button>
+                        </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -89,6 +91,11 @@ $(document).ready(function(){
 		
 		$("#myModal").modal("show")
 	}
+	
+	// list 페이지중 Register New Board 버튼 클릭시 register페이지로 이동 처리.
+	$("#regBtn").on("click", function(){
+		self.location = "/board/register";
+	});
 	
 });
 </script>
