@@ -72,7 +72,7 @@
             <!-- end row -->
 <script type="text/javascript">
 $(document).ready(function(){
-	//var result = '<c:out value="${result}"/>';
+	var result = '<c:out value="${result}"/>';
 	//var result = "${result}";
 	
 	checkModal(result);
