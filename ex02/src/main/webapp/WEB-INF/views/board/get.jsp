@@ -42,14 +42,13 @@
                         		value='<c:out value="${board.writer }"/>' readonly="readonly">
                         	</div>
            
-                        	<button data-oper='modify'class="btn btn-default"
-                        	onclick="location.href='/board/modify?bno=<c:out value="${board.bno }"/>'">
-                        	Modify
-                        	</button>
+                        	<button data-oper='modify'class="btn btn-default">Modify</button>
+                        	<button data-oper='list' class="btn btn-info">List</button>
                         	
-                        	<button data-oper='list' class="btn btn-info">
-                        	<a href="/board/list">List</a>
-                        	</button>
+                        	<form id="operForm" action="/board/modify" method="get">
+                        		<input type='hidden' id='bno' name='bno' 
+                        		value='<c:out value="${board.bno}"/>'>
+                        	</form>
                         	
                          </div>
                         <!--  end panel-body -->
@@ -59,4 +58,21 @@
                 <!-- end col-lg-6 -->
             </div>
             <!-- end row -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var operForm = $("#operForm");
+	
+	$("button[data-oper='modify']").on("click", function(e){
+		operForm.attr("action","/board/modify").submit();
+	});
+	
+	$("button[data-oper='list']").on("click", function(e){
+		//modify로 갈땐 bno가 필요하지만 list갈땐 필요없기때문에 bno remove(); 처리를 해줌.
+		operForm.find("#bno").remove();
+		operForm.attr("action","/board/list").submit();
+	});
+});
+</script>
  <%@include file="../includes/footer.jsp" %>
