@@ -81,6 +81,7 @@ $(document).ready(function(){
 	checkModal(result);
 	
 	//히스토리 체크 부분 추가 만약, 모든처리가 끝난 후에는 모당찰을 보여줄 필요가 없는 상태가된다.
+	//history.replaceState를 사용하여 history.state를 체크를 통해 뒤로가기시 불필요한 모달 부분 처리.
 	history.replaceState({},null,null);
 	
 	function checkModal(result) {
