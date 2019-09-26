@@ -57,7 +57,7 @@
     <!-- <label>Update Date</label> -->
     <input type="hidden" class="form-control" 
     name='updateDate' value='<fmt:formatDate pattern = "yyyy/MM/dd" 
-    value = "${board.updateDate }" />' readonly="readonly"> 
+    value = "${board.updateDate }" />' readonly="readonly">
     </div>
 
 	
