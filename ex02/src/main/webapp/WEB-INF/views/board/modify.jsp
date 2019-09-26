@@ -47,19 +47,19 @@
 	</div>
 
 	<div class="form-group">
-		<label>RegDate</label> 
-		<input class="form-control" name="regDate"
-			value='<fmt:formatDate pattern = "yyyy-MM-dd" value ="${board.regdate}"/> '
-			readonly="readonly">
-	</div> 
-	
-	<!-- update Date를 넣으면 수정버튼 클릭시 에러가 뜸.. 아직 이유의 원인은 모름.  -->
-	<%-- <div class="form-group">
-		<label>Update Date</label> 
-		<input class="form-control" name="updateDate"
-			value='<fmt:formatDate pattern = "yyyy-MM-dd" value ="${board.updateDate}"/> '
-			readonly="readonly">
-	</div> --%>
+    <!-- <label>Regdate</label> -->
+    <input type="hidden" class="form-control" 
+    name='regDate' value='<fmt:formatDate pattern = "yyyy/MM/dd" 
+    value = "${board.regdate }" />' readonly="readonly">
+    </div>
+               
+    <div class="form-group">
+    <!-- <label>Update Date</label> -->
+    <input type="hidden" class="form-control" 
+    name='updateDate' value='<fmt:formatDate pattern = "yyyy/MM/dd" 
+    value = "${board.updateDate }" />' readonly="readonly">
+    </div>
+
 	
 	<button type="submit" data-oper='modify' class="btn btn-default">Modify</button>
 	<button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>
