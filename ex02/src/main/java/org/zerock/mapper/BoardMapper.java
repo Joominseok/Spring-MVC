@@ -3,6 +3,7 @@ package org.zerock.mapper;
 import java.util.List;
 
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 public interface BoardMapper {
 	
@@ -20,5 +21,7 @@ public interface BoardMapper {
 	
 	public int update(BoardVO board);
 	
+	// 페이징 처리를 위한 메소드
+	public List<BoardVO> getListWithPaging(Criteria cri);
 	
 }
