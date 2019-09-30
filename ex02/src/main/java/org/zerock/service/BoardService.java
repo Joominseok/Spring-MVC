@@ -3,6 +3,7 @@ package org.zerock.service;
 import java.util.List;
 
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 public interface BoardService {
 	
@@ -19,5 +20,8 @@ public interface BoardService {
 	public boolean remove(Long bno);
 	
 	//전체 읽기
-	public List<BoardVO> getList();
+	//public List<BoardVO> getList();
+	
+	//페이징처리에 따른 읽기
+	public List<BoardVO> getList(Criteria cri);
 }
